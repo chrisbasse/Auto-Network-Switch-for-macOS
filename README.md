@@ -7,8 +7,9 @@ If Ethernet is unavailable or has no connectivity, Wi-Fi will be enabled.
 MAX_WAIT: number of seconds to wait at boot until a network service becomes available (default: 30).
 Ping target: the script uses 8.8.8.8 to validate connectivity. You can change it inside the function check_connectivity().
 
-Example output
-```Waiting for network service availability (max 30 sec)...
+Example output :
+```
+Waiting for network service availability (max 30 sec)...
 Network interface detected.
 Wi-Fi : en0 | Ethernet : en7
 Ethernet IP Address : 192.168.1.20
@@ -39,5 +40,13 @@ Create /Library/LaunchDaemons/com.auto.networkswitch.plist with the following co
 </plist>
 ```
 
+Its permissions and ownership must be correct, otherwise launchd will ignore it.
+```
+sudo chown root:wheel /Library/LaunchDaemons/com.auto.networkswitch.plist
+sudo chmod 644 /Library/LaunchDaemons/com.auto.networkswitch.plist
+```
+
 Then load it:
-```sudo launchctl load /Library/LaunchDaemons/com.auto.networkswitch.plist```
+```
+sudo launchctl load /Library/LaunchDaemons/com.auto.networkswitch.plist
+```
