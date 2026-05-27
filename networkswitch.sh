@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Christophe Bassete
+# Christophe Bassette
 # 23/05/2025
 # Testé sur macOS 13 / macOS 14 / macOS 15
 # v2.0
